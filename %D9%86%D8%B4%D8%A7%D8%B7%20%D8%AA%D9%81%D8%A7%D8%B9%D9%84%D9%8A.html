@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نشاط تفاعلي</title>
+<style>
+:root{--pink:#f4b8d0;--rose:#b94f7a;--ink:#382b35;--bg:#fff7fb}
+*{box-sizing:border-box}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:linear-gradient(135deg,#fff7fb,#f8efff);color:var(--ink);padding:22px}
+main{max-width:760px;margin:0 auto;background:#fff;border-radius:24px;padding:24px;box-shadow:0 12px 35px #6b315018}
+header{text-align:center;padding:12px 8px 20px}
+h1{color:var(--rose);margin:4px 0 8px;font-size:2rem}
+.sub{color:#766474}
+.progress{height:8px;background:#f5e5ee;border-radius:99px;overflow:hidden;margin:14px 0 22px}
+#bar{height:100%;width:0;background:var(--rose);transition:width .25s}
+.question{border:1px solid #f0dce7;border-radius:18px;padding:18px;margin:14px 0}
+.question h2{font-size:1.08rem;margin:0 0 14px;line-height:1.8}
+label.option{display:flex;gap:10px;align-items:flex-start;padding:11px 12px;margin:8px 0;border-radius:12px;background:#fff8fb;border:1px solid #f5e4ed;cursor:pointer;line-height:1.7}
+label.option:has(input:checked){border-color:var(--rose);background:#fff0f6}
+input{accent-color:var(--rose);margin-top:6px}
+button{border:0;border-radius:14px;padding:13px 22px;font-size:1rem;font-weight:bold;cursor:pointer;background:var(--rose);color:white}
+button.secondary{background:#f7e8f0;color:var(--rose);margin-right:8px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+#result{display:none;text-align:center;background:#fff3f8;border-radius:18px;padding:22px;margin-top:18px}
+#result h2{color:var(--rose)}
+.feedback{font-size:.95rem;text-align:right;margin-top:10px;line-height:1.8}
+.correct{color:#26734d}.wrong{color:#a33b4e}
+footer{text-align:center;color:#9a8795;font-size:.82rem;margin-top:22px}
+</style>
+</head>
+<body>
+<main>
+<header>
+<div style="font-size:2rem">📚 ✨</div>
+<h1>نشاط تفاعلي</h1>
+<div class="sub">درس: مستويات القراءة ومهاراتها</div>
+<p>اختاري الإجابة الصحيحة لكل سؤال، ثم اضغطي «عرض النتيجة».</p>
+</header>
+<div class="progress"><div id="bar"></div></div>
+<form id="quiz">
+<section class="question" data-answer="b" data-explain="القراءة الآلية هي فك الرموز البصرية دون الوصول إلى المعنى.">
+<h2>١. ما المقصود بالقراءة الآلية؟</h2>
+<label class="option"><input type="radio" name="q1" value="a"> فهم المعاني الضمنية وتحليل الأفكار</label>
+<label class="option"><input type="radio" name="q1" value="b"> فك الرموز البصرية فقط دون الوصول إلى المعنى</label>
+<label class="option"><input type="radio" name="q1" value="c"> تقييم مصداقية النص</label>
+</section>
+<section class="question" data-answer="a" data-explain="القراءة الحرفية تركز على المعلومات والتفاصيل المذكورة مباشرة في النص.">
+<h2>٢. أي مستوى يركز على تذكّر التفاصيل والمعلومات الواردة مباشرة في النص؟</h2>
+<label class="option"><input type="radio" name="q2" value="a"> القراءة الحرفية</label>
+<label class="option"><input type="radio" name="q2" value="b"> القراءة النقدية والإبداعية</label>
+<label class="option"><input type="radio" name="q2" value="c"> القراءة الآلية</label>
+</section>
+<section class="question" data-answer="c" data-explain="القراءة التحليلية تتجاوز الظاهر إلى فهم المعاني الضمنية والعلاقات بين الأفكار.">
+<h2>٣. تسمّى القراءة التحليلية أيضًا قراءة…</h2>
+<label class="option"><input type="radio" name="q3" value="a"> ما وراء السطور</label>
+<label class="option"><input type="radio" name="q3" value="b"> السطور</label>
+<label class="option"><input type="radio" name="q3" value="c"> ما بين الحروف</label>
+</section>
+<section class="question" data-answer="b" data-explain="من مهارات القراءة الحرفية استخراج المعلومات والتفاصيل ومعرفة معاني المفردات من السياق.">
+<h2>٤. أيّ مما يأتي من مهارات القراءة الحرفية؟</h2>
+<label class="option"><input type="radio" name="q4" value="a"> اكتشاف التناقضات المنطقية</label>
+<label class="option"><input type="radio" name="q4" value="b"> استخراج المعلومات والتفاصيل</label>
+<label class="option"><input type="radio" name="q4" value="c"> اقتراح حل مبتكر لمشكلة</label>
+</section>
+<section class="question" data-answer="a" data-explain="القراءة النقدية والإبداعية تهتم بتقييم النص ومصداقيته وأفكاره.">
+<h2>٥. أي مستوى يساعد القارئ على تقييم مصداقية النص والأدلة والبراهين؟</h2>
+<label class="option"><input type="radio" name="q5" value="a"> القراءة النقدية والإبداعية</label>
+<label class="option"><input type="radio" name="q5" value="b"> القراءة الآلية</label>
+<label class="option"><input type="radio" name="q5" value="c"> القراءة الحرفية فقط</label>
+</section>
+<section class="question" data-answer="c" data-explain="القراءة التحليلية تتضمن استنتاج المعاني غير المصرّح بها والتنبؤ بما قد يحدث بناءً على النص.">
+<h2>٦. استنتاج معنى غير مصرّح به في النص يُعد من مهارات…</h2>
+<label class="option"><input type="radio" name="q6" value="a"> القراءة الآلية</label>
+<label class="option"><input type="radio" name="q6" value="b"> القراءة الحرفية</label>
+<label class="option"><input type="radio" name="q6" value="c"> القراءة التحليلية</label>
+</section>
+<section class="question" data-answer="b" data-explain="الحقيقة معلومة صحيحة، أو يعتقد الكاتب أنها صحيحة، أما الرأي فهو موقف أو تفسير شخصي.">
+<h2>٧. ما الفرق بين الحقيقة والرأي وفق الدرس؟</h2>
+<label class="option"><input type="radio" name="q7" value="a"> لا يوجد فرق بينهما</label>
+<label class="option"><input type="radio" name="q7" value="b"> الحقيقة معلومة صحيحة، والرأي موقف أو تفسير شخصي</label>
+<label class="option"><input type="radio" name="q7" value="c"> الرأي دائمًا حقيقة مثبتة</label>
+</section>
+<section class="question" data-answer="a" data-explain="القراءة الإبداعية هي إنتاج أفكار جديدة واقتراح حلول مبتكرة للمشكلات.">
+<h2>٨. ما المقصود بالقراءة الإبداعية؟</h2>
+<label class="option"><input type="radio" name="q8" value="a"> إنتاج أفكار جديدة واقتراح حل مبتكر للمشكلة</label>
+<label class="option"><input type="radio" name="q8" value="b"> قراءة الرموز دون فهم المعنى</label>
+<label class="option"><input type="radio" name="q8" value="c"> تحديد أسماء الأشخاص فقط</label>
+</section>
+<div class="actions">
+<button type="button" id="submit">عرض النتيجة</button>
+<button type="button" class="secondary" id="reset">إعادة النشاط</button>
+</div>
+</form>
+<section id="result" aria-live="polite">
+<h2 id="score"></h2>
+<p id="message"></p>
+<div id="feedback" class="feedback"></div>
+</section>
+<footer>بالتوفيق 🌷</footer>
+</main>
+<script>
+const form=document.getElementById('quiz');
+const sections=[...document.querySelectorAll('.question')];
+const bar=document.getElementById('bar');
+form.addEventListener('change',()=>{
+ const answered=sections.filter(s=>s.querySelector('input:checked')).length;
+ bar.style.width=(answered/sections.length*100)+'%';
+});
+document.getElementById('submit').addEventListener('click',()=>{
+ let score=0, details=[];
+ sections.forEach((s,i)=>{
+  const chosen=s.querySelector('input:checked');
+  const correct=chosen && chosen.value===s.dataset.answer;
+  if(correct) score++;
+  details.push(`<p class="${correct?'correct':'wrong'}"><strong>السؤال ${i+1}:</strong> ${correct?'إجابة صحيحة ✓':'الإجابة الصحيحة: '+s.querySelector(`input[value="${s.dataset.answer}"]`).parentElement.textContent.trim()}<br>${s.dataset.explain}</p>`);
+ });
+ document.getElementById('score').textContent=`نتيجتك: ${score} من ${sections.length}`;
+ document.getElementById('message').textContent=score===8?'ممتاز! أتقنتِ الدرس 👏':score>=5?'أحسنتِ! راجعي الملاحظات لتثبيت المعلومات.':'راجعي مستويات القراءة ثم جرّبي مرة أخرى.';
+ document.getElementById('feedback').innerHTML=details.join('');
+ document.getElementById('result').style.display='block';
+ document.getElementById('result').scrollIntoView({behavior:'smooth',block:'start'});
+});
+document.getElementById('reset').addEventListener('click',()=>{
+ form.reset();bar.style.width='0';document.getElementById('result').style.display='none';window.scrollTo({top:0,behavior:'smooth'});
+});
+</script>
+</body>
+</html>
